@@ -1,0 +1,167 @@
+:root {
+  --bg-color: #0f172a;
+  --text-color: #e2e8f0;
+  --accent-color: #00f0ff;
+  --accent-glow: rgba(0, 240, 255, 0.5);
+  --glass-bg: rgba(30, 41, 59, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --font-main: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(0, 240, 255, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(255, 0, 150, 0.1) 0%, transparent 20%);
+  background-attachment: fixed;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.glass-panel:hover {
+  box-shadow: 0 0 15px var(--accent-glow);
+  border-color: var(--accent-color);
+}
+
+/* Typography */
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  background: linear-gradient(to right, #fff, var(--accent-color));
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 20px var(--accent-glow);
+}
+
+h2 {
+  color: var(--accent-color);
+  border-bottom: 1px solid var(--glass-border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Inputs & Buttons */
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  color: #fff;
+  font-family: inherit;
+  margin-bottom: 1rem;
+  box-sizing: border-box; 
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid var(--accent-color);
+  padding: 0.8em 1.5em;
+  font-size: 1em;
+  font-weight: 600;
+  font-family: inherit;
+  background-color: transparent;
+  color: var(--accent-color);
+  cursor: pointer;
+  transition: all 0.25s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background-color: var(--accent-color);
+  color: #000;
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Grid Layouts */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.capsule-content {
+  text-align: left;
+}
+
+.capsule-meta {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.status-locked {
+  background: rgba(255, 50, 50, 0.2);
+  color: #ff5050;
+  border: 1px solid #ff5050;
+}
+
+.status-unlocked {
+  background: rgba(50, 255, 50, 0.2);
+  color: #50ff50;
+  border: 1px solid #50ff50;
+}
+
+.countdown {
+  font-family: 'Courier New', monospace;
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  text-align: center;
+  margin: 1rem 0;
+}
+
+label {
+  display: block;
+  text-align: left;
+  margin-bottom: 0.5rem;
+  color: #ccc;
+  font-weight: bold;
+}
